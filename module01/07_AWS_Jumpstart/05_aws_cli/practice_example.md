@@ -96,6 +96,7 @@ Notiere dir die `SubnetId`s für das Public und Private Subnet.
   aws ec2 run-instances --image-id <AMI-ID> --instance-type t2.micro --key-name <KeyPairName> --subnet-id <PublicSubnetId> --security-group-ids <PythonSGId> --user-data '#!/bin/bash
   yum update -y
   yum install -y python3
+  python3 -m ensurepip --upgrade
   echo "print("Hello, world!")" > /home/ec2-user/script.py
   python3 /home/ec2-user/script.py' --associate-public-ip-address
   ```
