@@ -91,7 +91,7 @@ Notiere dir die `SubnetId`s für das Public und Private Subnet.
   ```
 
 ### 6. EC2-Instanzen erstellen
-- **Python-Instanz im Public Subnet** mit einem User Data Script, das ein Python-Skript ausführt:
+- **Python-Instanz im Public Subnet** mit einem User Data Script, das ein Python-Skript ausführt. Das Image ist Amazon Linux 2:
   ```bash
   aws ec2 run-instances --image-id <AMI-ID> --instance-type t2.micro --key-name <KeyPairName> --subnet-id <PublicSubnetId> --security-group-ids <PythonSGId> --user-data '#!/bin/bash
   yum update -y
@@ -102,23 +102,27 @@ Notiere dir die `SubnetId`s für das Public und Private Subnet.
   python3 /home/ec2-user/script.py' --associate-public-ip-address
   ```
 
-- **MySQL-Instanz im Private Subnet** mit einem User Data Script für die Installation von MariaDB und die Erstellung eines Datenbank-Benutzers und einer Datenbank:
+- **MySQL-Instanz im Private Subnet** mit einem User Data Script für die Installation von MariaDB und die Erstellung eines Datenbank-Benutzers und einer Datenbank. Das Image ist Ubuntu 24.04:
   ```bash
   aws ec2 run-instances --image-id <AMI-ID> --instance-type t2.micro --key-name <KeyPairName> --subnet-id <PrivateSubnetId> --security-group-ids <DatabaseSGId> --user-data '#!/bin/bash
-  yum update -y
-  yum install -y mariadb-server
-  systemctl start mariadb
-  systemctl enable mariadb
+  apt update -y
+  apt install mysql-server -y
+  systemctl start mmysql
+  systemctl enable mysql
+
+  # bind-address auf 0.0.0.0 setzen
+  sed -i "s/^bind-address.*/bind-address = 0.0.0.0/" /etc/mysql/mysql.conf.d/mysqld.cnf
+  systemctl restart mysql
 
   # Datenbank und Benutzer erstellen
   DB_NAME="meinedb"
   DB_USER="meinbenutzer"
   DB_PASS="geheimespasswort"
   
-  mysql -u root -e "CREATE DATABASE $DB_NAME;"
-  mysql -u root -e "CREATE USER '$DB_USER'@'%' IDENTIFIED BY '$DB_PASS';"
-  mysql -u root -e "GRANT ALL PRIVILEGES ON $DB_NAME.* TO '$DB_USER'@'%';"
-  mysql -u root -e "FLUSH PRIVILEGES;"
+  mysql -e "CREATE DATABASE $DB_NAME;"
+  mysql -e "CREATE USER '$DB_USER'@'%' IDENTIFIED BY '$DB_PASS';"
+  mysql -e "GRANT ALL PRIVILEGES ON $DB_NAME.* TO '$DB_USER'@'%';"
+  mysql -e "FLUSH PRIVILEGES;"
   '
   ```
 
