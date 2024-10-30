@@ -97,6 +97,7 @@ Notiere dir die `SubnetId`s für das Public und Private Subnet.
   yum update -y
   yum install -y python3
   python3 -m ensurepip --upgrade
+  pip3 install mysql-connector-python
   echo "print("Hello, world!")" > /home/ec2-user/script.py
   python3 /home/ec2-user/script.py' --associate-public-ip-address
   ```
