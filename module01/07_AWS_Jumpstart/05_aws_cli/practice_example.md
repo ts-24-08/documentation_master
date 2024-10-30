@@ -282,6 +282,10 @@ if __name__ == "__main__":
     cursor.close()
     connection.close()
 ```
+Das kannst du auch mit SCP machen. Führe dazu folgenden Befehl aus.
+```bash
+scp -i <pfad zum key> <pfad von zu kopierender Datei> ec2-user@<ip der instanz>:~/
+```
 
 ## Zusammenfassung
 - Du hast nun eine VPC mit einem Public und Private Subnet, ein Internet Gateway, eine Route Table für jedes Subnet sowie ein NAT Gateway für ausgehenden Datenverkehr des Private Subnet erstellt.
