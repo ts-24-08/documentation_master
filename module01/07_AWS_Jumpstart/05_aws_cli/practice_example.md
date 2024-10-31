@@ -94,11 +94,7 @@ Notiere dir die `SubnetId`s für das Public und Private Subnet.
   ```
 
 ### 6. EC2-Instanzen erstellen
-- Als erstes erstellen wir uns ein Key Pair mit
-  ```
-  aws ec2 create-key-pair --key-name MyKeyPair
-  ```
-- Danach kopieren wir den Inhalt als MyKeyPair.pem rein. Öffne mit `vim MyKeyPair.pem` die Datei und kopieren den Inhalt ab ---BEGIN RSA PRIVATE KEY....."
+- Wir gehen in die Sandbox und downloaden unter AWS Details den SSH-Key (.pem-Datei). Du downloadest die Datei und die heißt "labsuser.pem". Das zugehörige Key-Pair heißt dann vockey. Dieses muss dann bei der Instanzerstellung angegeben werden.
 - **Python-Instanz im Public Subnet** mit einem User Data Script, das ein Python-Skript ausführt. Das Image ist Amazon Linux 2:
   ```bash
   aws ec2 run-instances --image-id <AMI-ID> --instance-type t2.micro --key-name <KeyPairName> --subnet-id <PublicSubnetId> --security-group-ids <PythonSGId> --user-data '#!/bin/bash
