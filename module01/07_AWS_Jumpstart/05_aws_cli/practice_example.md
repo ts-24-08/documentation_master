@@ -11,7 +11,10 @@
 ```bash
 aws ec2 create-vpc --cidr-block 10.0.0.0/16
 ```
-Notiere dir die `VpcId` aus der Ausgabe.
+Notiere dir die `VpcId` aus der Ausgabe. Alternativ kannst du auch einen Befehl eingeben, um dir die VPCs anzeigen zu lassen. Schaue dazu in die offizielle AWS Dokumentation.
+```bash
+aws ec2 describe-vpcs
+```
 
 ### 2. Subnets erstellen
 - Erstelle ein **Public Subnet** (für die Python-Instanz):
