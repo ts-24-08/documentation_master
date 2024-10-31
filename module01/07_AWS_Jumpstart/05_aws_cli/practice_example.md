@@ -19,11 +19,11 @@ aws ec2 describe-vpcs
 ### 2. Subnets erstellen
 - Erstelle ein **Public Subnet** (für die Python-Instanz):
   ```bash
-  aws ec2 create-subnet --vpc-id <VpcId> --cidr-block 10.0.1.0/24 --availability-zone <deine-AZ>
+  aws ec2 create-subnet --vpc-id <VpcId> --cidr-block 10.0.5.0/24 --availability-zone <deine-AZ>
   ```
 - Erstelle ein **Private Subnet** (für die Datenbank-Instanz):
   ```bash
-  aws ec2 create-subnet --vpc-id <VpcId> --cidr-block 10.0.2.0/24 --availability-zone <deine-AZ>
+  aws ec2 create-subnet --vpc-id <VpcId> --cidr-block 10.0.10.0/24 --availability-zone <deine-AZ>
   ```
   
 Notiere dir die `SubnetId`s für das Public und Private Subnet.
