@@ -94,6 +94,10 @@ Notiere dir die `SubnetId`s für das Public und Private Subnet.
   ```
 
 ### 6. EC2-Instanzen erstellen
+- Als erstes erstellen wir uns ein Key Pair mit
+  ```
+  aws ec2 create-key-pair --key-name MyKeyPair
+  ```
 - **Python-Instanz im Public Subnet** mit einem User Data Script, das ein Python-Skript ausführt. Das Image ist Amazon Linux 2:
   ```bash
   aws ec2 run-instances --image-id <AMI-ID> --instance-type t2.micro --key-name <KeyPairName> --subnet-id <PublicSubnetId> --security-group-ids <PythonSGId> --user-data '#!/bin/bash
