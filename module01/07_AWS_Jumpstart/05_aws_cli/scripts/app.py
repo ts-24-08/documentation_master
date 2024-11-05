@@ -4,10 +4,10 @@ from mysql import connector
 
 def create_connection():
         connection = connector.connect(
-        host='<private-ip-der-db-instanz>',
-        user='<user>',
-        password='<password>',
-        database='<db_name>'  
+        host='10.0.10.27',
+        user='meinbenutzer',
+        password='geheimespasswort',
+        database='meinedb'  
     )
         return connection
 
