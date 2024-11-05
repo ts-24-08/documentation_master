@@ -176,13 +176,22 @@ Nach Abschluss dieser Anleitung kannst du:
    ```bash
    pip install -r requirements.txt
    ```
-
+   - Füge bitte mit dem Befehl `export <Umgebungsvariable>` die Umgebungsvariablen DB_USER, DB_PASSWORD, DB_HOST, DB_NAME
+```
+   DB_USER=(angelegter User in der RDS Datenbank)
+   DB_PASSWORD=(das Passwort was du bei der Erstellung der RDS-Datenbank gesetzt hast)
+   DB_HOST=(Der Datenbank-Endpunkt)
+   DB_NAME=todos (Setzt du bei Additional Configurations in der Datenbank-Erstellung)
+```
 4. **Datenbankverbindung testen**:
    - Verwende `mysql-client`, um eine Verbindung zur RDS-Datenbank herzustellen und die Todos-Tabelle zu erstellen:
    ```bash
    mysql -h your-rds-endpoint -u your-db-username -p
    ```
    - Erstelle die `todos`-Tabelle:
+   ```sql
+   use todos;
+   ```
    ```sql
    CREATE TABLE todos (
        id INT AUTO_INCREMENT PRIMARY KEY,
@@ -226,6 +235,8 @@ Nach Abschluss dieser Anleitung kannst du:
 
 3. **App testen**:
    - Rufe die EC2-Instanz über die öffentliche IP und Port 8000 auf und überprüfe, ob die Todos in der RDS-Datenbank gespeichert werden.
+
+4. Achte drauf, dass du die Umgebungsvariablen persistent setzt
 
 ---
 
