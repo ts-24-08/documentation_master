@@ -6,4 +6,4 @@
 5. Was ist ein IAM-Rollen? Wie unterscheidet sich eine Rolle von einem Benutzer?
 6. Was ist ein IAM-Policy? Wie unterscheidet sich eine Richtlinie von einer Rolle?
 7. Was ist ein IAM-Gruppe? Wie unterscheidet sich eine Gruppe von einem Benutzer?
-8. Was sind Organisations? Wie unterscheiden sie sich von IAM?
+8. Was sind Organisations? Wie unterscheiden sie sich von IAM Gruppen/Benutzern?
