@@ -61,9 +61,9 @@
 ## Schritt 5: IAM-Rolle an EC2-Instanz zuweisen
 
 - Gehe zurück zur EC2-Verwaltungskonsole, indem du auf den Service "EC2" klickst.
-- Erstelle eine neue `t2.micro`-Instanz oder wähle eine vorhandene Instanz aus.
-- Klicke auf "Aktionen" und dann auf "Instanz-Einstellungen bearbeiten" > "IAM-Rolle ändern".
-- Wähle die erstellte IAM-Rolle aus der Dropdown-Liste aus und klicke auf "Speichern".
+- Erstelle eine neue `t2.micro`-Instanz mit Amazon Linux AMI.
+- Klicke auf "Advanced Details" > "IAM-Rolle ändern".
+- Wähle die erstellte IAM-Rolle aus der Dropdown-Liste aus.
 
 ## Schritt 6: Testen des Zugriffs
 
@@ -75,7 +75,8 @@ aws s3 ls s3://dein-bucket-name
 # Hier bitte dein-bucket-name und deine-datei ersetzen
 aws s3 cp s3://dein-bucket-name/deine-datei.txt .
 ```
+(deine.date.txt ist die zuvor im Bucket hochgeladene Datei)
 
-## Schritt 7: Aufräumen (Optional)
+## Schritt 7: Aufräumen
 
-- Wenn du die Übung beendet hast, kannst du den S3-Bucket und die IAM-Rolle löschen, um Kosten zu sparen.
+- Wenn du die Übung beendet hast, kannst du den S3-Bucket, die EC2-Instanz und die IAM-Rolle löschen, um Kosten zu sparen.
