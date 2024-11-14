@@ -86,6 +86,7 @@ def post_todos(todo: TodoCreate):
    sudo apt install python3-pip python3.12-venv
    git clone https://github.com/ts-24-08/todo-api.git
    cd todo-api
+   git checkout feature/api-gateway
    python3 -m venv venv
    source venv/bin/activate
    pip install -r requirements.txt
