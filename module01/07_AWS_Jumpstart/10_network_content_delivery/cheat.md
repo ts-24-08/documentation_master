@@ -44,13 +44,6 @@ Eine Methode, die Datenverarbeitung näher am Entstehungsort durchzuführen, um 
 
 **Metapher**: Statt einen weit entfernten Supermarkt aufzusuchen, gibt es einen kleinen Laden direkt um die Ecke, um schneller zu sein.
 
-## Serverless Computing
-
-**Serverless Computing**: In dieser Architektur kümmert sich der Cloud-Anbieter um die Verwaltung der Server, die Anwendung benötigt, sodass man sich auf die Logik der Anwendung konzentrieren kann.
-
-**Vorteile**: Kosteneffizienz, automatische Skalierung und weniger Verwaltungsaufwand.
-
-**Metapher**: Das Mieten eines Autos – du zahlst nur, wenn du es brauchst, und musst dich nicht um Wartung oder Reparaturen kümmern.
 
 ## AWS Networking und Content Delivery Services
 
@@ -148,39 +141,6 @@ DNS steht für Domain Name System und fungiert als das "Adressbuch" des Internet
 
 Amazon Route 53 ist ein skalierbarer DNS-Webservice von AWS, der eine hohe Verfügbarkeit und Skalierbarkeit bietet. Route 53 unterstützt die oben genannten Routing-Methoden und bietet Funktionen wie Gesundheitschecks für Endpunkte. Durch die Integration von Route 53 können Unternehmen eine höhere Ausfallsicherheit und optimale Leistung sicherstellen.
 
-## Virtual Private Network (VPN)
-
-### Was ist ein VPN?
-
-Ein Virtual Private Network (VPN) ist eine Technologie, die eine sichere und verschlüsselte Verbindung über ein weniger sicheres Netzwerk (z. B. das Internet) herstellt. Ein VPN ermöglicht es Benutzern, auf Ressourcen eines privaten Netzwerks zuzugreifen, als ob sie sich physisch vor Ort befinden würden. Dabei wird der Datenverkehr durch einen sogenannten "Tunnel" geleitet, der die Daten vor unbefugtem Zugriff schützt.
-
-### Funktionsweise von VPN
-
-- **VPN-Tunnel**: Ein VPN verschlüsselt den gesamten Datenverkehr und leitet ihn durch einen Tunnel, der den Verkehr für Dritte unsichtbar macht. Dies bietet Sicherheit und Vertraulichkeit.
-- **Verschlüsselung und Authentifizierung**: VPNs verwenden Protokolle wie IPsec oder SSL/TLS, um Daten zu verschlüsseln und sicherzustellen, dass nur authentifizierte Benutzer auf die Verbindung zugreifen können.
-- **End-to-End-Schutz**: Der VPN-Client auf dem Gerät des Benutzers baut eine Verbindung zum VPN-Server auf, und dieser Server stellt die Verbindung zum Zielnetzwerk her. Der gesamte Datenverkehr zwischen dem Client und dem Server ist verschlüsselt.
-
-### Arten von VPN
-
-- **Site-to-Site VPN**: Verbindet ein lokales Netzwerk mit einer VPC in der Cloud, häufig zur Anbindung von Rechenzentren an Cloud-Infrastrukturen.
-- **Client VPN**: Ermöglicht Remote-Benutzern sicheren Zugriff auf AWS-Ressourcen.
-
-### VPN-Sicherheit
-
-- **Verschlüsselung**: Ein VPN verschlüsselt die Daten, die zwischen dem Client und dem Server gesendet werden, sodass diese nicht abgefangen und gelesen werden können.
-- **Multi-Factor Authentication (MFA)**: Viele VPN-Lösungen bieten eine zusätzliche Sicherheitsstufe, indem sie Benutzer auffordern, sich durch ein zweites Authentifizierungsmerkmal zu identifizieren.
-- **Zero-Trust**: Ein Sicherheitsmodell, bei dem jeder Benutzer und jedes Gerät als potenziell unsicher angesehen wird und eine strenge Authentifizierung und Autorisierung benötigt.
-
-### Beispiel: AWS VPN
-
-AWS bietet sowohl Site-to-Site VPN als auch Client VPN an, um den sicheren Zugriff auf AWS-Ressourcen zu gewährleisten. Einige Anwendungsfälle umfassen:
-
-- **Hybride Cloud-Architektur**: Ein Unternehmen kann sein lokales Rechenzentrum mit einer AWS-VPC verbinden und eine hybride Cloud-Umgebung schaffen.
-- **Remote-Arbeit**: Mitarbeiter können über das Client VPN von verschiedenen Standorten sicher auf Unternehmensressourcen in der AWS-Cloud zugreifen.
-
-### Anwendungsbeispiel: VPN in Kombination mit Route 53 und API Gateway
-
-In AWS könnten wir eine API bereitstellen, die über ein Amazon API Gateway erreichbar ist und in einer VPC gehostet wird. Über Route 53 können wir einen DNS-Eintrag erstellen, der auf diese API verweist, und nur Benutzer, die über das VPN auf die VPC zugreifen, haben Zugriff. Dies erhöht die Sicherheit der API und stellt sicher, dass nur authentifizierte, interne Benutzer die API erreichen können.
 
 ---
 
