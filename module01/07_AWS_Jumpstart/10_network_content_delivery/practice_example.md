@@ -79,12 +79,11 @@ def post_todos(todo: TodoCreate):
 
 ### Schritt 1: EC2-Instanz einrichten
 
-1. Erstelle eine EC2-Instanz und installiere die nötigen Pakete (z. B. `uvicorn` zum Starten der Anwendung und `fastapi`).
 2. Verbinde dich per SSH mit der EC2-Instanz und installiere die Pakete:
 
    ```bash
    sudo apt update
-   sudo apt install python3-pip
+   sudo apt install python3-pip python3.12-venv
    git clone https://github.com/ts-24-08/todo-api.git
    cd todo-api
    python3 -m venv venv
