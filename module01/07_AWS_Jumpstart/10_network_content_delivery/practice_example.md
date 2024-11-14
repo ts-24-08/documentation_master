@@ -144,8 +144,16 @@ Damit die Anwendung auch nach einem SSH-Disconnect weiterläuft, richten wir ein
 2. Erstelle eine neue REST API und wähle den Typ **Regional**.
 3. Erstelle eine **neue Ressource** für die API (z. B. `/todos`).
 4. Richte HTTP-Methoden (z. B. GET, POST) ein und verbinde sie mit dem öffentlichen Endpoint deiner EC2-Instanz (`http://<EC2-Instance-Public-IP>:8000/todos`).
-5. Konfiguriere **CORS** im API Gateway für jede Methode, um Anfragen von anderen Domains zuzulassen.
-6. Deploye die API und teste die Endpunkte.
+5. Achtung: Wenn due die POST-Methode erstellst, achte drauf wenn du sie testen möchtest, gib bitte etwas in dem Request Body ein:
+```json
+{
+    "id": 2,
+    "title": "Das ist ein Test",
+    "status": false
+}
+```
+7. Konfiguriere **CORS** im API Gateway für jede Methode, um Anfragen von anderen Domains zuzulassen. (Klicke auf Enable Cors)
+8. Deploye die API (Klicke auf den Button) und gib einen Namen ein und teste die Endpunkt über <API-Endpunkt>/todos
 
 ## 4. API testen
 
