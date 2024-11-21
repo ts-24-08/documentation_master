@@ -92,4 +92,6 @@
 
 ## Zusammenfassung
 - **AWS Budgets**: Ausgaben überwachen und Schwellenwerte festlegen.
-- **AWS Cost 
+- **AWS Cost Explorer**: Kostentreiber analysieren und Trends identifizieren.
+- **AWS Pricing Calculator**: Zukünftige Kosten planen.
+- **Tags**: Ressourcen effizient verwalten und Berichte erstellen.
